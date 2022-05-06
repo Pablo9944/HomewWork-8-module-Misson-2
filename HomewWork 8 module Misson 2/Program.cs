@@ -11,8 +11,29 @@ namespace HomewWork_8_module_Misson_2
     {
         const string Path = @"F:\";
         
+       
         static void Main(string[] args)
         {
+
+
+            DriveInfo[] dv = DriveInfo.GetDrives();
+            string[] myArray = new string[dv.Length];
+            foreach (DriveInfo d in dv)
+            {
+                
+               
+                for (int i = 0; i < dv.Length; i++)
+                {
+                    myArray[i] = d.Name;
+                }
+                
+            }
+
+            foreach (var item in myArray)
+            {
+                Console.WriteLine(item);
+            }
+
 
             DirectoryInfo DI = new DirectoryInfo(Path);
             long size = 0;
